@@ -60,7 +60,6 @@ func main() {
 		},
 	}
 
-	// Directly handle each car
 	displayCarDetails(gasCar)
 	displayCarDetails(electricCar)
 
