@@ -36,7 +36,7 @@ func main() {
 	fmt.Printf("Length is %d\n capacity is : %d\n",len(mySlice2), cap(mySlice2))
 	fmt.Println(mySlice2)
 
-	mySlice3 := []int{1, 2, 3,8, 4,5,9}
+	mySlice3 := []int{1, 2, 3, 8, 4, 5, 9}
 	fmt.Printf("Length is %d\n capacity is : %d\n",len(mySlice3), cap(mySlice3))
 	fmt.Println("Second element of mySlice3:", mySlice3[1])
 	fmt.Println("Slice from index 1 (inclusive) to 3 (exclusive):", mySlice3[1:3])
@@ -46,6 +46,21 @@ func main() {
 	fmt.Println("Changed Slice :=>",mySlice3)
 	newSlice :=  mySlice3[1:]
 	fmt.Println("newSlice is :=>",newSlice)
+	
+	//Append Function
+	//Everytime you add an item to the slice that exceeds the capacity of the underlying array
+	//It doubles the capacity of the underlying array by replacing it to the new array altogether
+	mySlice3 = append(mySlice3, 69)
+	fmt.Println("mySlice3 append is :=>",newSlice)
+
+	//for INDEX, VALUE in range
+	for _,i := range mySlice3{
+		fmt.Println(i)
+	}
+
+	newSlice1 := []int{87, 56, 78}
+	mySlice3 = append(mySlice3, newSlice1...)
+	fmt.Println(mySlice3)
 
 
 	var testSlice2 = make([]int, 0, n)
