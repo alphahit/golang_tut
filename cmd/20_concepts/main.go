@@ -40,7 +40,7 @@ fmt.Println(c)
 
 
 //Here I am not redecalring the err variable
-//Go understands that if I ahve atlease one new variable on the left
+//Go understands that if I have atleast one new variable on the left
 //Then I can declare any number of old variables on the right and reassign them 
 a,err := foo1()
  if err != nil {
@@ -56,7 +56,46 @@ a,err := foo1()
 	fmt.Println(b)
  
 
+
+//No while loops in go
+ sum := 0
+ for i := 0; i <10; i++ {
+	sum += i
+ }
+ 
+ //Kind of like while loop
+  idx := 0
+  for idx < 10{
+	sum += idx
+	idx += 1
+  }
+
+//Infite loop broken by break
+for {
+	sum += 1
+	if sum > 100{
+		break  
+	}
 }
+
+i, err := fooDefer()
+if err != nil {
+	panic(err)
+}
+println(i)
+
+}
+//Defer Keyword
+func fooDefer() (int, error) {
+	defer func() {
+		println("End of Loop")
+	}()
+	for i:= 0; i <10; i++{
+		println(i)
+	}
+	return 0, nil
+}
+
 
 func foo() error {
 	return fmt.Errorf("foo error")
