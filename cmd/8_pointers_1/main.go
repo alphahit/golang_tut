@@ -5,30 +5,39 @@ import "fmt"
 
 func main() {
 	var p *int32 = new(int32)
+	//var p *int32 = new(int32): Declares a pointer p to an int32 and allocates memory for an int32 value. 
+	//Initially, the allocated memory contains the zero value of int32, which is 0.
 	var i int32
 	fmt.Printf("The value of p points to is: %v", p)
 	fmt.Printf("\nThe value of p is: %v", *p)
 	fmt.Printf("\nThe value of i is: %v", i)
 
 	*p = 10
+	//*p = 10: Sets the value at the address p points to, which is now 10.
 	fmt.Printf("\n2 - The value of p points to is: %v", p)
 	fmt.Printf("\n2 - The value of p is: %v", *p)
 	fmt.Printf("\n2 - The value of i is: %v", i)
 
 	p = &i
+	//p = &i: Makes p point to the address of i.
 	*p = 1
+	//*p = 1: Sets the value of i (through p) to 1.
 	fmt.Printf("\n3 - The value of p points to is: %v", p)
 	fmt.Printf("\n3 - The value of i points to is: %v", &i)
 	i = 10
 	fmt.Printf("\n4 - The value of p is: %v", *p)
+	//Dereferences p to print the value at the address p points to, which is now 10.
 	fmt.Printf("\n4 - The value of i is: %v", i)
 
 	*p = 15
+	//*p = 15: Sets the value of i (through p) to 15.
 	fmt.Printf("\n5 - The value of p is: %v", *p)
 	fmt.Printf("\n5 - The value of i is: %v", i)
 
 	var k int32 = 2
+	//var k int32 = 2: Declares a variable k of type int32 and initializes it to 2.
 	i = k
+	//i = k: Sets i to the value of k, which is 2.
 	fmt.Printf("\n6 - The value of p is: %v", *p)
 	fmt.Printf("\n6 - The value of i is: %v", i)
 	fmt.Printf("\n6 - The value of i is: %v", k)
